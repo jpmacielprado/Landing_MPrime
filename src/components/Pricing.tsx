@@ -27,7 +27,7 @@ const plans = [
 
 const Pricing: React.FC = () => {
     return (
-        <section className="py-20 bg-gray-50">
+        <section id="pricing" className="py-20 bg-gray-50">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold text-[#1e3a8a] mb-4">
                     Tabela de Preços

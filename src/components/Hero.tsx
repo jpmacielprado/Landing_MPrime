@@ -6,7 +6,6 @@ import Segurança from '../assets/seguranca.svg';
 const Hero: React.FC = () => {
     return (
         <section className="relative min-h-screen flex items-center bg-linear-to-br from-[#1e3a5f] to-[#0f172a] text-white overflow-hidden">
-            {/* Elemento decorativo de fundo */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-500/10 skew-x-12 transform translate-x-20" />
 
             <div className="px-12  grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -35,6 +34,7 @@ const Hero: React.FC = () => {
                         </a>
 
                         <a
+                            href='#pricing'
                             className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-8 py-4 rounded-lg font-semibold text-white transition-all transform hover:scale-101"
                         >
                             Ver Preços
