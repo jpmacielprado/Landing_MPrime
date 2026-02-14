@@ -1,11 +1,11 @@
 import React from 'react';
-import { MessageSquareText, ArrowRight } from 'lucide-react';
+import { MessageSquareText, } from 'lucide-react';
 import Segurança from '../assets/seguranca.svg';
 import { ScrollAnimation } from '../components/ScrollAnimation';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-screen flex items-center bg-linear-to-br from-[#1e3a5f] to-[#0f172a] text-white overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center bg-linear-to-br from-[#1e3a5f] to-[#0f172a] text-white overflow-hidden">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-500/10 skew-x-12 transform translate-x-20" />
 
             <ScrollAnimation>
@@ -31,14 +31,6 @@ const Hero: React.FC = () => {
                             >
                                 <MessageSquareText size={20} />
                                 Contratar serviços
-                            </a>
-
-                            <a
-                                href='#pricing'
-                                className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-8 py-4 rounded-lg font-semibold text-white transition-all transform hover:scale-101"
-                            >
-                                Ver Preços
-                                <ArrowRight size={18} />
                             </a>
                         </div>
                     </div>

@@ -28,7 +28,7 @@ const Differences: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 px-10 bg-[#e0f2fe]">
+        <section id="benefits" className="py-24 px-10 bg-[#e0f2fe]">
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
                 {/* Lado Esquerdo: Lista de Diferenciais */}
