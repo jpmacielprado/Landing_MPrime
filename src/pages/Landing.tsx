@@ -4,6 +4,7 @@ import About from '../components/About';
 import Features from '../components/Features';
 import Benefits from '../components/Benefits';
 import Reviews from '../components/Reviews';
+import Pricing from '../components/Pricing';
 
 const Landing: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Landing: React.FC = () => {
         <Features />
         <Benefits />
         <Reviews />
+        <Pricing />
       </main>
 
       {/* 5. Rodapé */}
