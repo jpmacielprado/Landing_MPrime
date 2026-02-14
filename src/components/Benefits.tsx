@@ -42,17 +42,19 @@ const Differences: React.FC = () => {
                     <div className="space-y-8">
                         {diffs.map((item, index) => (
                             <div key={index} className="flex gap-5">
-                                <div className="shrink-0 mt-1">
-                                    {item.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-slate-800 tracking-tight">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-slate-600 leading-relaxed max-w-sm">
-                                        {item.description}
-                                    </p>
-                                </div>
+                                <ScrollAnimation delay={0.3}>
+                                    <div className="shrink-0 mt-1">
+                                        {item.icon}
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-slate-800 tracking-tight">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-slate-600 leading-relaxed max-w-sm">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </ScrollAnimation>
                             </div>
                         ))}
                     </div>
@@ -70,7 +72,7 @@ const Differences: React.FC = () => {
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 };
 

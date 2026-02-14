@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ScrollAnimation } from './ScrollAnimation';
 
 interface FAQItem {
     question: string;
@@ -35,36 +36,40 @@ const Faq: React.FC = () => {
     return (
         <section className="py-20 bg-[#e0f2fe]">
             <div className="container mx-auto px-6 max-w-3xl">
-                <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12 text-center">
-                    Dúvidas Frequentes
-                </h2>
+                <ScrollAnimation>
+                    <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12 text-center">
+                        Dúvidas Frequentes
+                    </h2>
+                </ScrollAnimation>
 
                 <div className="space-y-4">
                     {faqData.map((item, index) => (
-                        <div
-                            key={index}
-                            className="border border-slate-200 rounded-2xl overflow-hidden transition-all"
-                        >
-                            <button
-                                className="w-full flex items-center justify-between p-6 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
-                                onClick={() => toggleFAQ(index)}
+                        <ScrollAnimation key={index} delay={0.1 * index}>
+                            <div
+                                key={index}
+                                className="border border-slate-200 rounded-2xl overflow-hidden transition-all"
                             >
-                                <span className="font-bold text-swhite md:text-lg">
-                                    {item.question}
-                                </span>
-                                {openIndex === index ? (
-                                    <ChevronUp className="text-blue-600 shrink-0" />
-                                ) : (
-                                    <ChevronDown className="text-slate-400 shrink-0" />
-                                )}
-                            </button>
+                                <button
+                                    className="w-full flex items-center justify-between p-6 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
+                                    onClick={() => toggleFAQ(index)}
+                                >
+                                    <span className="font-bold text-swhite md:text-lg">
+                                        {item.question}
+                                    </span>
+                                    {openIndex === index ? (
+                                        <ChevronUp className="text-blue-600 shrink-0" />
+                                    ) : (
+                                        <ChevronDown className="text-slate-400 shrink-0" />
+                                    )}
+                                </button>
 
-                            {openIndex === index && (
-                                <div className="p-6 bg-white text-slate-600 leading-relaxed border-t border-slate-100 animate-fadeIn">
-                                    {item.answer}
-                                </div>
-                            )}
-                        </div>
+                                {openIndex === index && (
+                                    <div className="p-6 bg-white text-slate-600 leading-relaxed border-t border-slate-100 animate-fadeIn">
+                                        {item.answer}
+                                    </div>
+                                )}
+                            </div>
+                        </ScrollAnimation>
                     ))}
                 </div>
             </div>
