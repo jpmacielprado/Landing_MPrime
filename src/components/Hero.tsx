@@ -27,6 +27,7 @@ const Hero: React.FC = () => {
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a
                             href="https://wa.me/seunumeroaqui"
+                            target="_blank"
                             className="flex items-center justify-center gap-2 bg-[#253548] hover:bg-[#1e2a3a] px-8 py-4 rounded-lg font-bold text-white transition-all transform hover:scale-101 shadow-lg shadow-black/20"
                         >
                             <MessageSquareText size={20} />
