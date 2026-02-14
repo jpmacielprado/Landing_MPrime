@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram, Facebook, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, Instagram, ShieldCheck } from 'lucide-react';
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
@@ -33,19 +33,15 @@ const Footer: React.FC = () => {
 
                     {/* Coluna 3: Contacto */}
                     <div>
-                        <h4 className="text-white font-bold mb-4">Contacto</h4>
+                        <h4 className="text-white font-bold mb-4">Contato</h4>
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-center gap-3">
                                 <Phone size={16} className="text-blue-400" />
-                                (12) 99133-7334
+                                (12) 99163-1525
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={16} className="text-blue-400" />
-                                mprime@gmail.com
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <MapPin size={16} className="text-blue-400 mt-1" />
-                                <span>Rua Wladimir Herzog, 182 - Bosque dos Eucaliptos<br />São José dos Campos - SP</span>
+                                contato@mprimegestao.com.br
                             </li>
                         </ul>
                     </div>
@@ -56,9 +52,6 @@ const Footer: React.FC = () => {
                         <div className="flex gap-4">
                             <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-all">
                                 <Instagram size={20} className="text-white" />
-                            </a>
-                            <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-blue-700 transition-all">
-                                <Facebook size={20} className="text-white" />
                             </a>
                         </div>
                     </div>

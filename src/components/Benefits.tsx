@@ -1,6 +1,7 @@
 import React from 'react';
 import Doc from '../assets/doc.svg';
 import { Chrome, Video, Headphones, PlusCircle } from 'lucide-react';
+import { ScrollAnimation } from '../components/ScrollAnimation';
 
 const Differences: React.FC = () => {
     const diffs = [
@@ -11,7 +12,7 @@ const Differences: React.FC = () => {
         },
         {
             title: 'Flexibilidade',
-            description: 'Emissão por Videoconferência (você faz tudo pelo celular/computador) ou Presencial.',
+            description: 'Emissão por Videoconferência (você faz tudo pelo celular/computador).',
             icon: <Video className="text-[#1e3a8a]" size={28} />,
         },
         {
@@ -32,9 +33,11 @@ const Differences: React.FC = () => {
 
                 {/* Lado Esquerdo: Lista de Diferenciais */}
                 <div className="space-y-10">
-                    <h2 className="text-3xl font-bold text-[#1e3a8a] mb-8">
-                        Diferenciais da Elo Digital
-                    </h2>
+                    <ScrollAnimation>
+                        <h2 className="text-3xl font-bold text-[#1e3a8a] mb-8">
+                            Nossos Diferenciais
+                        </h2>
+                    </ScrollAnimation>
 
                     <div className="space-y-8">
                         {diffs.map((item, index) => (

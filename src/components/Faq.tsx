@@ -17,7 +17,7 @@ const faqData: FAQItem[] = [
     },
     {
         question: "Quanto tempo leva para o certificado ficar pronto?",
-        answer: "Após a validação (presencial ou por vídeo), a emissão costuma ser imediata. O processo todo de atendimento leva cerca de 15 a 30 minutos."
+        answer: "Após a validação, a emissão costuma ser imediata. O processo todo de atendimento leva cerca de 15 a 30 minutos."
     },
     {
         question: "Posso usar o e-CPF para emitir notas fiscais da minha empresa?",

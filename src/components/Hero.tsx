@@ -1,6 +1,5 @@
 import React from 'react';
 import { MessageSquareText, ArrowRight } from 'lucide-react';
-import Logo from '../assets/logo.svg';
 import Segurança from '../assets/seguranca.svg';
 import { ScrollAnimation } from '../components/ScrollAnimation';
 
@@ -14,7 +13,6 @@ const Hero: React.FC = () => {
 
                     {/* Lado Esquerdo: Texto e CTA */}
                     <div className="space-y-8">
-                        <img src={Logo} alt="MPrime Logo" className="w-48 h-auto" />
 
                         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                             Sua Identidade Digital com <span className="text-blue-400">Segurança e Agilidade.</span>
@@ -22,7 +20,7 @@ const Hero: React.FC = () => {
 
                         <p className="text-lg text-slate-300 max-w-lg leading-relaxed">
                             Emita seu Certificado Digital e-CPF ou e-CNPJ com quem é referência.
-                            Atendimento presencial ou por videoconferência em poucos minutos.
+                            Atendimento por videoconferência em poucos minutos.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
