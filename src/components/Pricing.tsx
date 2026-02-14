@@ -6,21 +6,21 @@ const plans = [
     {
         name: 'e-CPF A1',
         description: 'Ideal para pessoas físicas. Uso em computador.',
-        price: '149,00',
+        price: '149,90',
         features: ['Validade de 12 meses', 'Assinatura digital ilimitada', 'Instalação simples no PC', 'Acesso ao portal e-CAC'],
         highlight: false,
     },
     {
         name: 'e-CNPJ A1',
         description: 'Para empresas que emitem notas e acessam portais.',
-        price: '229,00',
+        price: '199,90',
         features: ['Validade de 12 meses', 'Emissão de Notas Fiscais', 'Conectividade Social ICP', 'Instalação no servidor/PC'],
         highlight: true, // Card em destaque
     },
     {
         name: 'e-CPF A3',
         description: 'Segurança em Token ou Cartão físico.',
-        price: '280,00',
+        price: '494,90',
         features: ['Validade de até 36 meses', 'Mídia física inclusa', 'Alta segurança criptográfica', 'Uso em qualquer computador'],
         highlight: false,
     },
