@@ -6,6 +6,8 @@ import Benefits from '../components/Benefits';
 import Reviews from '../components/Reviews';
 import Pricing from '../components/Pricing';
 import Faq from '../components/Faq';
+import Footer from '../components/Footer';
+
 
 const Landing: React.FC = () => {
   return (
@@ -20,8 +22,9 @@ const Landing: React.FC = () => {
         <Faq />
       </main>
 
-      {/* 5. Rodapé */}
-      {/* <Footer /> */}
+      <footer className="bg-[#0f172a] text-slate-300 py-12 border-t border-slate-800">
+        <Footer />
+      </footer>
     </div>
   );
 };
