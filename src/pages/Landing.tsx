@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Features from '../components/Features';
+
 
 const Landing: React.FC = () => {
   return (
@@ -8,6 +10,7 @@ const Landing: React.FC = () => {
       <main>
         <Hero />
         <About />
+        <Features />
       </main>
 
       {/* 5. Rodapé */}

@@ -3,7 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 
 const About: React.FC = () => {
     return (
-        <section className="py-20 bg-linear-to-b from-[#e0f2fe] to-white">
+        <section className="py-30 bg-linear-to-b from-[#e0f2fe] to-white">
             <div className="container mx-auto px-6">
                 <div className="max-w-3xl">
                     {/* Título Principal */}
