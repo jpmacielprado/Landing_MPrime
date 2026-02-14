@@ -4,7 +4,7 @@ import { ScrollAnimation } from '../components/ScrollAnimation';
 
 const About: React.FC = () => {
     return (
-        <section className="py-30 px-10 bg-linear-to-b from-[#e0f2fe] to-white">
+        <section className="py-30 px-10 bg-[#e0f2fe]">
             <div className="container mx-auto px-6">
                 <div className="max-w-3xl">
                     {/* Título Principal */}

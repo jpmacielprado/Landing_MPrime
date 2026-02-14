@@ -20,7 +20,7 @@ const reviews = [
 
 const Testimonials: React.FC = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-[#e0f2fe]">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12">
                     Depoimento dos clientes
