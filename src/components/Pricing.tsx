@@ -108,7 +108,7 @@ const Pricing: React.FC = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 ${plan.highlight
-                                    ? 'bg-blue-400 hover:bg-blue-500 text-[#0f172a] shadow-lg shadow-blue-400/20'
+                                    ? 'bg-white hover:bg-blue-200 text-[#0f172a] shadow-lg shadow-blue-400/20'
                                     : 'bg-[#1e3a8a] hover:bg-[#162a63] text-white'
                                     }`}
                             >
