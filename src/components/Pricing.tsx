@@ -22,7 +22,7 @@ const plans: Plan[] = [
             'Emissão via Videoconferência'
         ],
         highlight: false,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a1',
+        checkoutUrl: 'https://wa.me/5512991337334?text=Olá%20MPrime%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20e-CPF%20A1.',
     },
     {
         name: 'e-CNPJ A1',
@@ -35,7 +35,7 @@ const plans: Plan[] = [
             'Uso em sistemas de gestão (ERP)'
         ],
         highlight: true,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecnpj-a1',
+        checkoutUrl: 'https://wa.me/5512991337334?text=Olá%20MPrime%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20e-CNPJ%20A1.',
     },
     {
         name: 'e-CPF A3',
@@ -48,7 +48,7 @@ const plans: Plan[] = [
             'Ideal para advogados e contadores'
         ],
         highlight: false,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a3',
+        checkoutUrl: 'https://wa.me/5512991337334?text=Olá%20MPrime%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20e-CPF%20A3.',
     },
 ];
 
