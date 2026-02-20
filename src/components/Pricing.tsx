@@ -1,93 +1,125 @@
 import React from 'react';
 import { Check, ShoppingCart } from 'lucide-react';
-import { ScrollAnimation } from './ScrollAnimation';
 
-const plans = [
+interface Plan {
+    name: string;
+    description: string;
+    price: string;
+    features: string[];
+    highlight: boolean;
+    checkoutUrl: string; // Link gerado no Mercado Pago
+}
+
+const plans: Plan[] = [
     {
         name: 'e-CPF A1',
-        description: 'Ideal para pessoas físicas. Uso em computador.',
+        description: 'Pessoa Física - 12 meses. Instalação no computador.',
         price: '149,90',
-        features: ['Validade de 12 meses', 'Assinatura digital ilimitada', 'Instalação simples no PC', 'Acesso ao portal e-CAC'],
+        features: [
+            'Validade de 1 ano',
+            'Assinatura de documentos digital',
+            'Acesso ao e-CAC e Receita Federal',
+            'Emissão via Videoconferência'
+        ],
         highlight: false,
+        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a1',
     },
     {
         name: 'e-CNPJ A1',
-        description: 'Para empresas que emitem notas e acessam portais.',
+        description: 'Pessoa Jurídica - 12 meses. O mais versátil.',
         price: '199,90',
-        features: ['Validade de 12 meses', 'Emissão de Notas Fiscais', 'Conectividade Social ICP', 'Instalação no servidor/PC'],
-        highlight: true, // Card em destaque
+        features: [
+            'Validade de 1 ano',
+            'Emissão de Notas Fiscais (NF-e)',
+            'Conectividade Social ICP',
+            'Uso em sistemas de gestão (ERP)'
+        ],
+        highlight: true,
+        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecnpj-a1',
     },
     {
         name: 'e-CPF A3',
-        description: 'Segurança em Token ou Cartão físico.',
+        description: 'Segurança máxima em mídia física (Cartão/Token).',
         price: '494,90',
-        features: ['Validade de até 36 meses', 'Mídia física inclusa', 'Alta segurança criptográfica', 'Uso em qualquer computador'],
+        features: [
+            'Validade de até 3 anos',
+            'Mídia física inclusa',
+            'Não pode ser copiado (maior segurança)',
+            'Ideal para advogados e contadores'
+        ],
         highlight: false,
+        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a3',
     },
 ];
 
 const Pricing: React.FC = () => {
     return (
-        <section id="pricing" className="py-20 bg-[#e0f2fe]">
-            <div className="container mx-auto px-6 text-center">
-                <ScrollAnimation>
-                    <h2 className="text-3xl font-bold text-[#1e3a8a] mb-4">
-                        Tabela de Preços
+        <section id="pricing" className="py-24 bg-slate-50 scroll-mt-20">
+            <div className="container mx-auto px-6">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="text-4xl font-bold text-[#1e3a8a] mb-4">
+                        Planos e Preços
                     </h2>
-                </ScrollAnimation>
-
-                <ScrollAnimation delay={0.2}>
-                    <p className="text-slate-600 mb-12 max-w-2xl mx-auto">
-                        Escolha o modelo ideal para sua necessidade. Emissão rápida por videoconferência.
+                    <p className="text-slate-600 text-lg">
+                        Emita seu certificado sem sair de casa. Escolha a melhor opção para você ou sua empresa.
                     </p>
-                </ScrollAnimation>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                     {plans.map((plan, index) => (
-                        <ScrollAnimation key={index} delay={0.3 + index * 0.2}>
-                            <div
-                                key={index}
-                                className={`relative p-8 rounded-3xl transition-all duration-300 ${plan.highlight
-                                    ? 'bg-[#1e3a8a] text-white scale-105 shadow-xl z-10'
-                                    : 'bg-white text-slate-800 shadow-md hover:shadow-lg border border-slate-100'
-                                    }`}
-                            >
-                                {plan.highlight && (
-                                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-400 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">
-                                        Mais Vendido
-                                    </span>
-                                )}
+                        <div
+                            key={index}
+                            className={`relative p-8 rounded-3xl transition-all duration-300 border ${plan.highlight
+                                ? 'bg-[#1e3a8a] text-white scale-105 shadow-2xl border-transparent'
+                                : 'bg-white text-slate-800 shadow-xl border-slate-100 hover:border-blue-200'
+                                }`}
+                        >
+                            {plan.highlight && (
+                                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                                    Mais Popular
+                                </div>
+                            )}
 
+                            <div className="mb-8">
                                 <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-[#1e3a8a]'}`}>
                                     {plan.name}
                                 </h3>
-                                <p className={`text-sm mb-6 ${plan.highlight ? 'text-blue-100' : 'text-slate-500'}`}>
+                                <p className={`text-sm h-10 ${plan.highlight ? 'text-blue-100' : 'text-slate-500'}`}>
                                     {plan.description}
                                 </p>
-
-                                <div className="mb-8">
-                                    <span className="text-sm font-medium">R$</span>
-                                    <span className="text-5xl font-bold">{plan.price}</span>
-                                </div>
-
-                                <ul className="space-y-4 mb-10 text-left">
-                                    {plan.features.map((feature, fIndex) => (
-                                        <li key={fIndex} className="flex items-center gap-3 text-sm">
-                                            <Check size={18} className={plan.highlight ? 'text-blue-300' : 'text-blue-600'} />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <button className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors ${plan.highlight
-                                    ? 'bg-blue-400 hover:bg-blue-500 text-white'
-                                    : 'bg-[#1e3a8a] hover:bg-[#162a63] text-white'
-                                    }`}>
-                                    <ShoppingCart size={20} />
-                                    Comprar Agora
-                                </button>
                             </div>
-                        </ScrollAnimation>
+
+                            <div className="mb-8 flex items-baseline gap-1">
+                                <span className="text-xl font-medium">R$</span>
+                                <span className="text-5xl font-black tracking-tight">{plan.price}</span>
+                            </div>
+
+                            <ul className="space-y-4 mb-10 min-h-40">
+                                {plan.features.map((feature, fIndex) => (
+                                    <li key={fIndex} className="flex items-start gap-3 text-sm leading-tight">
+                                        <Check size={18} className={`shrink-0 ${plan.highlight ? 'text-blue-300' : 'text-green-600'}`} />
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <a
+                                href={plan.checkoutUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 ${plan.highlight
+                                    ? 'bg-blue-400 hover:bg-blue-500 text-[#0f172a] shadow-lg shadow-blue-400/20'
+                                    : 'bg-[#1e3a8a] hover:bg-[#162a63] text-white'
+                                    }`}
+                            >
+                                <ShoppingCart size={20} />
+                                Comprar Agora
+                            </a>
+
+                            <p className={`mt-4 text-center text-[10px] uppercase tracking-widest font-semibold ${plan.highlight ? 'text-blue-200' : 'text-slate-400'}`}>
+                                Pagamento Seguro via Mercado Pago
+                            </p>
+                        </div>
                     ))}
                 </div>
             </div>

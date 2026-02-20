@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                         &copy; {currentYear} MPrime Gestão Empresarial. Todos os direitos reservados.
                     </p>
                     <p className="mt-2 text-slate-500">
-                        Desenvolvido por filhão lindo goat ❤️
+                        Desenvolvido por @Jpmacielprado.
                     </p>
                 </div>
             </div>
