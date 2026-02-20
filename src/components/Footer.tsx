@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-white font-bold mb-4">Siga-nos</h4>
                         <div className="flex gap-4">
-                            <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-all">
+                            <a href="https://www.instagram.com/mprime_gestao/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition-all">
                                 <Instagram size={20} className="text-white" />
                             </a>
                         </div>
