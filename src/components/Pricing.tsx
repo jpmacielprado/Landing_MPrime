@@ -56,15 +56,15 @@ const plans: Plan[] = [
 const Pricing: React.FC = () => {
   return (
     <section id="pricing" className="py-28 px-8 bg-[#f8faff]">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
         <ScrollAnimation className="text-center">
-          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/[0.08] border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
+          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/8border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
             Planos
           </span>
           <h2 className="font-sora text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-[#0d1f3c] tracking-[-0.03em] leading-[1.2] mb-4">
             Preços Transparentes
           </h2>
-          <p className="text-slate-500 text-lg max-w-[500px] mx-auto">
+          <p className="text-slate-500 text-lg max-w-125mx-auto">
             Emita seu certificado sem sair de casa. Escolha a melhor opção para você ou sua empresa.
           </p>
         </ScrollAnimation>
@@ -82,7 +82,7 @@ const Pricing: React.FC = () => {
               >
                 {/* Popular badge */}
                 {highlight && (
-                  <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-sora text-[0.7rem] font-extrabold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full shadow-[0_4px_12px_rgba(16,185,129,0.4)] whitespace-nowrap">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-sora text-[0.7rem] font-extrabold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-[0_4px_12px_rgba(16,185,129,0.4)] whitespace-nowrap">
                     Mais Popular
                   </div>
                 )}
@@ -91,7 +91,7 @@ const Pricing: React.FC = () => {
                 <h3 className={`font-sora text-2xl font-extrabold tracking-[-0.02em] mb-1.5 ${highlight ? 'text-white' : 'text-[#0d1f3c]'}`}>
                   {name}
                 </h3>
-                <p className={`text-sm min-h-[2.5em] mb-6 leading-[1.5] ${highlight ? 'text-white/50' : 'text-slate-400'}`}>
+                <p className={`text-sm min-h-[2.5em] mb-6 leading-normal ${highlight ? 'text-white/50' : 'text-slate-400'}`}>
                   {description}
                 </p>
 
@@ -104,12 +104,12 @@ const Pricing: React.FC = () => {
                 </div>
 
                 {/* Features */}
-                <ul className="flex flex-col gap-3 mb-8 min-h-[160px]">
+                <ul className="flex flex-col gap-3 mb-8 min-h-40">
                   {features.map((feat) => (
                     <li key={feat} className={`flex items-start gap-3 text-sm leading-snug ${highlight ? 'text-white/70' : 'text-slate-600'}`}>
                       <Check
                         size={16}
-                        className={`flex-shrink-0 mt-0.5 ${highlight ? 'text-[#38bdf8]' : 'text-emerald-500'}`}
+                        className={`shrink-0 mt-0.5 ${highlight ? 'text-[#38bdf8]' : 'text-emerald-500'}`}
                         strokeWidth={2.5}
                       />
                       {feat}
@@ -133,9 +133,6 @@ const Pricing: React.FC = () => {
                   Comprar Agora
                 </a>
 
-                <p className={`mt-4 text-center text-[0.65rem] uppercase tracking-[0.06em] font-semibold ${highlight ? 'text-white/30' : 'text-slate-300'}`}>
-                  Pagamento Seguro via Mercado Pago
-                </p>
               </div>
             </ScrollAnimation>
           ))}
