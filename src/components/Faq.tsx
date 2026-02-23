@@ -36,10 +36,10 @@ const Faq: React.FC = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" className="py-28 px-8 bg-white">
-      <div className="max-w-[700px] mx-auto text-center">
+    <section id="faq" className="pb-28 pt-10  px-8 bg-white">
+      <div className="max-w-175 mx-auto text-center">
         <ScrollAnimation>
-          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/[0.08] border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
+          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/8border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
             Dúvidas
           </span>
           <h2 className="font-sora text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-[#0d1f3c] tracking-[-0.03em] leading-[1.2] mb-12">
@@ -58,18 +58,19 @@ const Faq: React.FC = () => {
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 bg-[#f8faff] hover:bg-[#f0f4ff]"
-                  style={{ background: openIndex === i ? '#ffffff' : undefined }}
+                  className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 ${openIndex === i ? 'bg-white' : 'bg-transparent hover:bg-white/5'
+                    }`}
                 >
-                  <span className="font-sora text-sm font-bold text-[#0d1f3c] md:text-base">
+                  {/* Texto Branco quando fechado, Roxo quando aberto */}
+                  <span className={`font-sora text-sm font-bold md:text-base transition-colors duration-200 ${openIndex === i ? 'text-white' : 'text-white'
+                    }`}>
                     {question}
                   </span>
+
                   <ChevronDown
                     size={20}
-                    className={[
-                      'flex-shrink-0 text-blue-500 transition-transform duration-300',
-                      openIndex === i ? 'rotate-180' : '',
-                    ].join(' ')}
+                    className={`shrink-0 transition-all duration-300 ${openIndex === i ? 'rotate-180 text-purple-600' : 'text-white'
+                      }`}
                   />
                 </button>
 
@@ -82,7 +83,7 @@ const Faq: React.FC = () => {
                     paddingBottom: openIndex === i ? undefined : '0',
                   }}
                 >
-                  <p className="px-6 pb-5 pt-0 text-sm text-slate-500 leading-[1.75]">
+                  <p className="px-6 py-4 text-sm font-semibold text-slate-500 leading-[1.75]">
                     {answer}
                   </p>
                 </div>
