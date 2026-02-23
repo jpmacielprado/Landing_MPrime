@@ -5,8 +5,8 @@ const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#060e1e] text-white/55 pt-16 pb-8 border-t border-white/[0.06] px-8">
-      <div className="max-w-[1100px] mx-auto">
+    <footer className="bg-[#060e1e] text-white/55 pt-16 pb-8 border-t border-white/6 px-8">
+      <div className="max-w-275 mx-auto">
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
 
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               <ShieldCheck size={22} className="text-[#38bdf8]" />
               MPrime
             </a>
-            <p className="text-sm leading-[1.7] max-w-[240px]">
+            <p className="text-sm leading-[1.7] max-w-60">
               Sua parceira de confiança para emissão de certificados digitais e-CPF e e-CNPJ com agilidade e segurança.
             </p>
           </div>
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                { label: 'Início',   href: '#hero'    },
-                { label: 'Preços',   href: '#pricing' },
-                { label: 'Sobre Nós', href: '#about'  },
-                { label: 'FAQ',      href: '#faq'     },
+                { label: 'Início', href: '#hero' },
+                { label: 'Preços', href: '#pricing' },
+                { label: 'Sobre Nós', href: '#about' },
+                { label: 'FAQ', href: '#faq' },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <a
@@ -52,11 +52,11 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="flex flex-col gap-3">
               <li className="flex items-center gap-2.5 text-sm">
-                <Phone size={15} className="text-[#38bdf8] flex-shrink-0" />
+                <Phone size={15} className="text-[#38bdf8] shrink-0" />
                 (12) 99163-1525
               </li>
               <li className="flex items-center gap-2.5 text-sm">
-                <Mail size={15} className="text-[#38bdf8] flex-shrink-0" />
+                <Mail size={15} className="text-[#38bdf8] shrink-0" />
                 contato@mprimegestao.com.br
               </li>
             </ul>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/mprime_gestao/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[38px] h-[38px] rounded-xl bg-white/[0.06] flex items-center justify-center text-white/60 no-underline transition-all duration-200 hover:bg-blue-700 hover:text-white"
+                className="w-9.5 h-9.5 rounded-xl bg-white/6 flex items-center justify-center text-white/60 no-underline transition-all duration-200 hover:bg-blue-700 hover:text-white"
               >
                 <Instagram size={18} />
               </a>
@@ -81,11 +81,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+        <div className="pt-8 border-t border-white/6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
           <span>© {year} MPrime Gestão Empresarial. Todos os direitos reservados.</span>
           <span>
             Desenvolvido por{' '}
-            <a href="#" className="text-white/30 no-underline hover:text-[#38bdf8] transition-colors">
+            <a href="https://www.instagram.com/jp.macielprado/" target="_blank" rel="noopener noreferrer" className="text-white/30 no-underline hover:text-[#38bdf8] transition-colors">
               @Jpmacielprado
             </a>
           </span>

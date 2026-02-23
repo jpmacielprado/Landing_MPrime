@@ -36,7 +36,7 @@ const Reviews: React.FC = () => {
       {/* Grid texture */}
       <div className="absolute inset-0 bg-grid-texture pointer-events-none" />
 
-      <div className="max-w-[1100px] mx-auto text-center relative z-10">
+      <div className="max-w-275 mx-auto text-center relative z-10">
         <ScrollAnimation>
           <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/25 px-3.5 py-1.5 rounded-full mb-4">
             Depoimentos
@@ -49,9 +49,9 @@ const Reviews: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
           {reviews.map(({ name, text, date }, i) => (
             <ScrollAnimation key={name} delay={(i + 1) as 1 | 2 | 3}>
-              <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7 text-left transition-all duration-300 hover:border-[#38bdf8]/20 h-full flex flex-col">
+              <div className="relative bg-white/4 border border-white/8 rounded-2xl p-7 text-left transition-all duration-300 hover:border-[#38bdf8]/20 h-full flex flex-col">
                 {/* Decorative quote */}
-                <span className="absolute top-6 right-6 text-5xl leading-none text-white/[0.06] font-serif select-none">
+                <span className="absolute top-6 right-6 text-5xl leading-none text-white/6 font-serif select-none">
                   "
                 </span>
 
@@ -68,8 +68,8 @@ const Reviews: React.FC = () => {
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-3 border-t border-white/[0.06] pt-4">
-                  <div className="w-[38px] h-[38px] rounded-full bg-gradient-to-br from-blue-500 to-[#38bdf8] flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center gap-3 border-t border-white/6 pt-4">
+                  <div className="w-9.5 h-9.5 rounded-full bg-linear-to-br from-blue-500 to-[#38bdf8] flex items-center justify-center shrink-0">
                     <User size={20} className="text-white" />
                   </div>
                   <div>

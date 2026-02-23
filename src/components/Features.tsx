@@ -31,7 +31,7 @@ const Features: React.FC = () => {
       {/* Grid texture */}
       <div className="absolute inset-0 bg-grid-texture pointer-events-none" />
 
-      <div className="max-w-[1100px] mx-auto text-center relative z-10">
+      <div className="max-w-275 mx-auto text-center relative z-10">
         <ScrollAnimation>
           <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/25 px-3.5 py-1.5 rounded-full mb-4">
             Vantagens
@@ -44,8 +44,8 @@ const Features: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
           {benefits.map(({ title, description, icon }, i) => (
             <ScrollAnimation key={title} delay={(i + 1) as 1 | 2 | 3 | 4}>
-              <div className="group bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-left transition-all duration-300 hover:bg-white/[0.07] hover:border-[#38bdf8]/25 hover:-translate-y-1">
-                <div className="w-[52px] h-[52px] rounded-2xl bg-blue-700/20 border border-blue-700/30 flex items-center justify-center mb-5 text-[#38bdf8] transition-all duration-300 group-hover:bg-[#38bdf8]/20 group-hover:border-[#38bdf8]/40">
+              <div className="group bg-white/4 border border-white/8 rounded-2xl p-8 text-left transition-all duration-300 hover:bg-white/[0.07] hover:border-[#38bdf8]/25 hover:-translate-y-1">
+                <div className="w-13 h-13 rounded-2xl bg-blue-700/20 border border-blue-700/30 flex items-center justify-center mb-5 text-[#38bdf8] transition-all duration-300 group-hover:bg-[#38bdf8]/20 group-hover:border-[#38bdf8]/40">
                   {icon}
                 </div>
                 <h3 className="font-sora text-base font-bold text-white mb-2">{title}</h3>
