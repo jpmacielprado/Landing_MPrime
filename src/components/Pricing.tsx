@@ -1,130 +1,148 @@
 import React from 'react';
 import { Check, ShoppingCart } from 'lucide-react';
+import { ScrollAnimation } from './ScrollAnimation';
 
 interface Plan {
-    name: string;
-    description: string;
-    price: string;
-    features: string[];
-    highlight: boolean;
-    checkoutUrl: string; // Link gerado no Mercado Pago
+  name: string;
+  description: string;
+  price: string;
+  features: string[];
+  highlight: boolean;
+  checkoutUrl: string;
 }
 
 const plans: Plan[] = [
-    {
-        name: 'e-CPF A1',
-        description: 'Pessoa Física - 12 meses. Instalação no computador.',
-        price: '149,90',
-        features: [
-            'Validade de 1 ano',
-            'Assinatura de documentos digital',
-            'Acesso ao e-CAC e Receita Federal',
-            'Emissão via Videoconferência'
-        ],
-        highlight: false,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a1',
-    },
-    {
-        name: 'e-CNPJ A1',
-        description: 'Pessoa Jurídica - 12 meses. O mais versátil.',
-        price: '199,90',
-        features: [
-            'Validade de 1 ano',
-            'Emissão de Notas Fiscais (NF-e)',
-            'Conectividade Social ICP',
-            'Uso em sistemas de gestão (ERP)'
-        ],
-        highlight: true,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecnpj-a1',
-    },
-    {
-        name: 'e-CPF A3',
-        description: 'Segurança máxima em mídia física (Cartão/Token).',
-        price: '494,90',
-        features: [
-            'Validade de até 3 anos',
-            'Mídia física inclusa',
-            'Não pode ser copiado (maior segurança)',
-            'Ideal para advogados e contadores'
-        ],
-        highlight: false,
-        checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a3',
-    },
+  {
+    name: 'e-CPF A1',
+    description: 'Pessoa Física · 12 meses. Instalação no computador.',
+    price: '149,90',
+    features: [
+      'Validade de 1 ano',
+      'Assinatura de documentos digital',
+      'Acesso ao e-CAC e Receita Federal',
+      'Emissão via Videoconferência',
+    ],
+    highlight: false,
+    checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a1',
+  },
+  {
+    name: 'e-CNPJ A1',
+    description: 'Pessoa Jurídica · 12 meses. O mais versátil.',
+    price: '199,90',
+    features: [
+      'Validade de 1 ano',
+      'Emissão de Notas Fiscais (NF-e)',
+      'Conectividade Social ICP',
+      'Uso em sistemas de gestão (ERP)',
+    ],
+    highlight: true,
+    checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecnpj-a1',
+  },
+  {
+    name: 'e-CPF A3',
+    description: 'Segurança máxima em mídia física (Cartão/Token).',
+    price: '494,90',
+    features: [
+      'Validade de até 3 anos',
+      'Mídia física inclusa',
+      'Não pode ser copiado (maior segurança)',
+      'Ideal para advogados e contadores',
+    ],
+    highlight: false,
+    checkoutUrl: 'https://link.mercadopago.com.br/seulink-ecpf-a3',
+  },
 ];
 
 const Pricing: React.FC = () => {
-    return (
-        <section id="pricing" className="py-24 bg-slate-50 scroll-mt-20">
-            <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl font-bold text-[#1e3a8a] mb-4">
-                        Planos e Preços
-                    </h2>
-                    <p className="text-slate-600 text-lg">
-                        Emita seu certificado sem sair de casa. Escolha a melhor opção para você ou sua empresa.
-                    </p>
+  return (
+    <section id="pricing" className="py-28 px-8 bg-[#f8faff]">
+      <div className="max-w-[1100px] mx-auto">
+        <ScrollAnimation className="text-center">
+          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/[0.08] border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
+            Planos
+          </span>
+          <h2 className="font-sora text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-[#0d1f3c] tracking-[-0.03em] leading-[1.2] mb-4">
+            Preços Transparentes
+          </h2>
+          <p className="text-slate-500 text-lg max-w-[500px] mx-auto">
+            Emita seu certificado sem sair de casa. Escolha a melhor opção para você ou sua empresa.
+          </p>
+        </ScrollAnimation>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14 items-start">
+          {plans.map(({ name, description, price, features, highlight, checkoutUrl }, i) => (
+            <ScrollAnimation key={name} delay={(i + 1) as 1 | 2 | 3}>
+              <div
+                className={[
+                  'relative rounded-3xl p-8 border transition-all duration-300',
+                  highlight
+                    ? 'bg-[#0d1f3c] border-transparent scale-[1.04] shadow-[0_30px_60px_rgba(13,31,60,0.3)]'
+                    : 'bg-white border-slate-200 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1',
+                ].join(' ')}
+              >
+                {/* Popular badge */}
+                {highlight && (
+                  <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-sora text-[0.7rem] font-extrabold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full shadow-[0_4px_12px_rgba(16,185,129,0.4)] whitespace-nowrap">
+                    Mais Popular
+                  </div>
+                )}
+
+                {/* Name + Description */}
+                <h3 className={`font-sora text-2xl font-extrabold tracking-[-0.02em] mb-1.5 ${highlight ? 'text-white' : 'text-[#0d1f3c]'}`}>
+                  {name}
+                </h3>
+                <p className={`text-sm min-h-[2.5em] mb-6 leading-[1.5] ${highlight ? 'text-white/50' : 'text-slate-400'}`}>
+                  {description}
+                </p>
+
+                {/* Price */}
+                <div className="flex items-baseline gap-1 mb-7">
+                  <span className={`text-base font-semibold ${highlight ? 'text-white/50' : 'text-slate-400'}`}>R$</span>
+                  <span className={`font-sora text-[2.75rem] font-extrabold tracking-[-0.04em] ${highlight ? 'text-white' : 'text-[#0d1f3c]'}`}>
+                    {price}
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            className={`relative p-8 rounded-3xl transition-all duration-300 border ${plan.highlight
-                                ? 'bg-[#1e3a8a] text-white scale-105 shadow-2xl border-transparent'
-                                : 'bg-white text-slate-800 shadow-xl border-slate-100 hover:border-blue-200'
-                                }`}
-                        >
-                            {plan.highlight && (
-                                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                                    Mais Popular
-                                </div>
-                            )}
+                {/* Features */}
+                <ul className="flex flex-col gap-3 mb-8 min-h-[160px]">
+                  {features.map((feat) => (
+                    <li key={feat} className={`flex items-start gap-3 text-sm leading-snug ${highlight ? 'text-white/70' : 'text-slate-600'}`}>
+                      <Check
+                        size={16}
+                        className={`flex-shrink-0 mt-0.5 ${highlight ? 'text-[#38bdf8]' : 'text-emerald-500'}`}
+                        strokeWidth={2.5}
+                      />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
 
-                            <div className="mb-8">
-                                <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-[#1e3a8a]'}`}>
-                                    {plan.name}
-                                </h3>
-                                <p className={`text-sm h-10 ${plan.highlight ? 'text-blue-100' : 'text-slate-500'}`}>
-                                    {plan.description}
-                                </p>
-                            </div>
+                {/* CTA */}
+                <a
+                  href={checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={[
+                    'w-full py-3.5 rounded-xl font-sora font-bold text-[0.95rem] flex items-center justify-center gap-2.5 transition-all duration-200 active:scale-95 no-underline',
+                    highlight
+                      ? 'bg-white text-[#0d1f3c] shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:bg-[#e0f2fe]'
+                      : 'bg-[#0d1f3c] text-white hover:bg-[#162d55]',
+                  ].join(' ')}
+                >
+                  <ShoppingCart size={18} />
+                  Comprar Agora
+                </a>
 
-                            <div className="mb-8 flex items-baseline gap-1">
-                                <span className="text-xl font-medium">R$</span>
-                                <span className="text-5xl font-black tracking-tight">{plan.price}</span>
-                            </div>
-
-                            <ul className="space-y-4 mb-10 min-h-40">
-                                {plan.features.map((feature, fIndex) => (
-                                    <li key={fIndex} className="flex items-start gap-3 text-sm leading-tight">
-                                        <Check size={18} className={`shrink-0 ${plan.highlight ? 'text-blue-300' : 'text-green-600'}`} />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <a
-                                href={plan.checkoutUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 ${plan.highlight
-                                    ? 'bg-white hover:bg-blue-200 text-[#0f172a] shadow-lg shadow-blue-400/20'
-                                    : 'bg-[#1e3a8a] hover:bg-[#162a63] text-white'
-                                    }`}
-                            >
-                                <ShoppingCart size={20} />
-                                Comprar Agora
-                            </a>
-
-                            <p className={`mt-4 text-center text-[10px] uppercase tracking-widest font-semibold ${plan.highlight ? 'text-blue-200' : 'text-slate-400'}`}>
-                                Pagamento Seguro via Mercado Pago
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+                <p className={`mt-4 text-center text-[0.65rem] uppercase tracking-[0.06em] font-semibold ${highlight ? 'text-white/30' : 'text-slate-300'}`}>
+                  Pagamento Seguro via Mercado Pago
+                </p>
+              </div>
+            </ScrollAnimation>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Pricing;

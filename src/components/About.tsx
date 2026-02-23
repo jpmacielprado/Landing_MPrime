@@ -1,65 +1,92 @@
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
-import { ScrollAnimation } from '../components/ScrollAnimation';
+import { CheckIcon } from 'lucide-react';
+import { ScrollAnimation } from './ScrollAnimation';
+
+const steps = [
+  { num: '1', text: 'Escolha seu plano e efetue o pagamento' },
+  { num: '2', text: 'Agende sua videoconferência com um especialista' },
+  { num: '3', text: 'Receba seu certificado digital instantaneamente' },
+];
+
+const checkItems = [
+  { bold: 'Autenticidade garantida',          rest: ' para seus documentos.' },
+  { bold: 'Acesse o portal da Receita Federal', rest: ' com seu Certificado.' },
+  { bold: 'Emita Notas Fiscais',               rest: ' com valor jurídico, de qualquer lugar.' },
+];
 
 const About: React.FC = () => {
-    return (
-        <section id="about" className="py-30 px-10 bg-[#e0f2fe]">
-            <div className="container mx-auto px-6">
-                <div className="max-w-3xl">
-                    {/* Título Principal */}
-                    <ScrollAnimation>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-6">
-                            O que é o Certificado Digital?
-                        </h2>
+  return (
+    <section id="about" className="py-28 px-8 bg-[#f8faff]">
+      <div className="max-w-275 mx-auto grid md:grid-cols-2 gap-20 items-center">
 
-                        {/* Descrição em parágrafo */}
-                        <p className="text-lg text-slate-600 leading-relaxed mb-10">
-                            O certificado digital é a tecnologia que garante autenticidade e segurança em
-                            transações online. Com ele, você assina documentos, acessa o portal da Receita
-                            Federal e emite Notas Fiscais com validade jurídica, sem sair de casa.
-                        </p>
-                    </ScrollAnimation>
+        {/* Left: text */}
+        <ScrollAnimation>
+          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/8 border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
+            O que é
+          </span>
 
-                    {/* Lista de Benefícios */}
-                    <ul className="space-y-6">
-                        <ScrollAnimation delay={0.1}>
-                            <li className="flex items-center gap-4">
-                                <div className="bg-blue-100 p-1 rounded-full">
-                                    <CheckCircle2 className="text-blue-600 w-6 h-6" />
-                                </div>
-                                <p className="text-lg text-slate-700">
-                                    <span className="font-bold text-black">Autenticidade garantida</span> para seus documentos.
-                                </p>
-                            </li>
-                        </ScrollAnimation>
+          <h2 className="font-sora text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-[#0d1f3c] tracking-[-0.03em] leading-[1.2] mb-6">
+            O que é o Certificado Digital?
+          </h2>
 
-                        <ScrollAnimation delay={0.2}>
-                            <li className="flex items-center gap-4">
-                                <div className="bg-blue-100 p-1 rounded-full">
-                                    <CheckCircle2 className="text-blue-600 w-6 h-6" />
-                                </div>
-                                <p className="text-lg text-slate-700">
-                                    <span className="font-bold text-black">Acesse o portal da Receita Federal</span> com seu Certificado.
-                                </p>
-                            </li>
-                        </ScrollAnimation>
+          <p className="text-lg text-slate-500 leading-[1.8] mb-10">
+            O certificado digital é a tecnologia que garante autenticidade e segurança em
+            transações online. Com ele, você assina documentos, acessa o portal da Receita
+            Federal e emite Notas Fiscais com validade jurídica, sem sair de casa.
+          </p>
 
-                        <ScrollAnimation delay={0.3}>
-                            <li className="flex items-center gap-4">
-                                <div className="bg-blue-100 p-1 rounded-full">
-                                    <CheckCircle2 className="text-blue-600 w-6 h-6" />
-                                </div>
-                                <p className="text-lg text-slate-700">
-                                    <span className="font-bold text-black">Emita Notas Fiscais</span> com valor jurídico, de qualquer lugar.
-                                </p>
-                            </li>
-                        </ScrollAnimation>
-                    </ul>
+          <ul className="flex flex-col gap-4">
+            {checkItems.map(({ bold, rest }) => (
+              <li key={bold} className="flex items-start gap-4 text-[#334155] text-base leading-[1.6]">
+                <div className="w-7 h-7 rounded-lg bg-linear-to-br from-blue-600 to-[#38bdf8] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                  <CheckIcon size={14} className="text-white" strokeWidth={3} />
                 </div>
+                <span>
+                  <strong className="font-bold">{bold}</strong>
+                  {rest}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </ScrollAnimation>
+
+        {/* Right: steps card */}
+        <ScrollAnimation delay={2} className="flex justify-center">
+          <div className="relative bg-[#0d1f3c] rounded-3xl p-8 w-full max-w-85overflow-hidden">
+            {/* Top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-0.75 bg-linear-to-r from-blue-600 to-[#38bdf8]" />
+
+            {/* Glow blob */}
+            <div className="absolute -top-7.5 -right-7.5 w-30 h-30 rounded-full bg-[#38bdf8]/20 blur-2xl" />
+
+            <p className="text-[0.7rem] tracking-widest uppercase text-white/40 mb-3">
+              Como funciona
+            </p>
+            <p className="font-sora text-xl font-bold text-white mb-6">
+              Emissão em 3 passos simples
+            </p>
+
+            <div className="flex flex-col">
+              {steps.map(({ num, text }, i) => (
+                <div
+                  key={num}
+                  className={`flex items-center gap-4 py-4 text-sm text-white/70 ${
+                    i < steps.length - 1 ? 'border-b border-white/6' : ''
+                  }`}
+                >
+                  <div className="w-8 h-8 rounded-full bg-[#38bdf8]/15 border border-[#38bdf8]/30 flex items-center justify-center font-sora font-bold text-sm text-[#38bdf8] shrink-0">
+                    {num}
+                  </div>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
-        </section>
-    );
+          </div>
+        </ScrollAnimation>
+
+      </div>
+    </section>
+  );
 };
 
 export default About;

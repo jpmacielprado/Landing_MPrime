@@ -1,24 +1,51 @@
-import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-interface Props {
-    children: ReactNode;
-    delay?: number;
+interface ScrollAnimationProps {
+  children: React.ReactNode;
+  delay?: 0 | 1 | 2 | 3 | 4;
+  className?: string;
 }
 
-export const ScrollAnimation = ({ children, delay = 0 }: Props) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }} // Começa invisível e 30px abaixo
-            whileInView={{ opacity: 1, y: 0 }} // Quando aparece, sobe e fica visível
-            viewport={{ once: true, margin: "-100px" }} // Anima apenas uma vez
-            transition={{
-                duration: 0.8,
-                delay: delay,
-                ease: [0.21, 0.47, 0.32, 0.98] // Transição suave "premium"
-            }}
-        >
-            {children}
-        </motion.div>
+const delayMap: Record<number, string> = {
+  0: '',
+  1: 'reveal-delay-1',
+  2: 'reveal-delay-2',
+  3: 'reveal-delay-3',
+  4: 'reveal-delay-4',
+};
+
+export const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
+  children,
+  delay = 0,
+  className = '',
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '-60px 0px' }
     );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${delayMap[delay]} ${className}`}
+    >
+      {children}
+    </div>
+  );
 };
