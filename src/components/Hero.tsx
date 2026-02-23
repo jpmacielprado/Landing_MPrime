@@ -1,17 +1,17 @@
 import React from 'react';
 import { MessageSquareText, ShieldCheck } from 'lucide-react';
 import { ScrollAnimation } from './ScrollAnimation';
+import Seguranca from '../assets/seguranca.svg';
 
 const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-[#0d1f3c] text-white overflow-hidden pt-32 pb-16 px-8"
+      className="relative max-h-screen flex items-center bg-[#0d1f3c] text-white overflow-hidden pt-32 pb-16 px-8"
     >
       {/* Background orbs */}
       <div className="absolute -top-25 -right-37.5 w-150 h-150 rounded-full bg-blue-700/25 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-12.5 -left-25 w-100 h-100 rounded-full bg-[#38bdf8]/12 blur-[80px] pointer-events-none" />
-      <div className="absolute top-[40%] left-[40%] w-50 h-50 rounded-full bg-amber-400/10 blur-[80px] pointer-events-none" />
 
       {/* Grid texture */}
       <div className="absolute inset-0 bg-grid-texture pointer-events-none" />
@@ -48,11 +48,11 @@ const Hero: React.FC = () => {
             </a>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/8">
+            <div className="flex flex-wrap gap-8 mt-6 pt-4 border-t border-white/8">
               {[
-                { number: '6.000+', label: 'Avaliações'   },
+                { number: '6.000+', label: 'Avaliações' },
                 { number: '15 min', label: 'Emissão rápida' },
-                { number: '100%',   label: 'Online'        },
+                { number: '100%', label: 'Online' },
               ].map(({ number, label }) => (
                 <div key={label}>
                   <span className="block font-sora text-[1.6rem] font-extrabold tracking-[-0.03em]">{number}</span>
@@ -64,43 +64,24 @@ const Hero: React.FC = () => {
         </ScrollAnimation>
 
         {/* Right: floating card */}
-        <ScrollAnimation delay={2} className="hidden md:flex justify-center">
-          <div className="relative w-full max-w-95">
-            {/* Card */}
-            <div className="relative bg-white/4 border border-white/10 rounded-3xl p-10 backdrop-blur-xl">
-              {/* Top shimmer line */}
-              <div className="absolute -top-px left-5 right-5 h-px bg-linear-to-r from-transparent via-[#38bdf8] to-transparent" />
+        <ScrollAnimation delay={1} className="hidden md:flex justify-center items-center relative">
+          <div className="relative -mt-20">
 
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-blue-500 to-[#38bdf8] flex items-center justify-center mb-6 shadow-[0_8px_24px_rgba(59,130,246,0.4)]">
-                <ShieldCheck size={28} className="text-white" />
-              </div>
-
-              <p className="font-sora text-lg font-bold text-white mb-1">Certificado Digital</p>
-              <p className="text-sm text-white/45 mb-6">Válido juridicamente em todo Brasil</p>
-
-              <ul className="flex flex-col gap-3">
-                {[
-                  'Assinatura de documentos online',
-                  'Acesso ao portal e-CAC',
-                  'Emissão de Notas Fiscais (NF-e)',
-                  'Autenticidade garantida',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-white/70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <img
+              src={Seguranca}
+              alt="Segurança"
+              loading="lazy"
+              className="w-full max-w-125 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            />
 
             {/* Floating chips */}
-            <div className="animate-float absolute -bottom-5 -left-7.5 flex items-center gap-2 bg-[#0d1f3c]/90 border border-white/12 rounded-xl px-4 py-3 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-sm text-white font-semibold">
-              <ShieldCheck size={14} className="text-[#38bdf8]" />
+            <div className="animate-float absolute bottom-[15%] -left-10 flex items-center gap-2 bg-[#0d1f3c]/90 border border-white/12 rounded-xl px-4 py-3 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-sm text-white font-semibold whitespace-nowrap">
+              <ShieldCheck size={16} className="text-[#38bdf8]" />
               Emissão Segura
             </div>
-            <div className="animate-float-delay absolute -top-3.75 -right-5 flex items-center gap-2 bg-[#0d1f3c]/90 border border-white/12 rounded-xl px-4 py-3 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-sm text-white font-semibold">
-              <span className="w-2 h-2 rounded-full bg-green-400" />
+
+            <div className="animate-float-delay absolute top-[10%] -right-8 flex items-center gap-2 bg-[#0d1f3c]/90 border border-white/12 rounded-xl px-4 py-3 backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-sm text-white font-semibold whitespace-nowrap">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
               ICP-Brasil
             </div>
           </div>
