@@ -9,9 +9,9 @@ const steps = [
 ];
 
 const checkItems = [
-  { bold: 'Autenticidade garantida',          rest: ' para seus documentos.' },
+  { bold: 'Autenticidade garantida', rest: ' para seus documentos.' },
   { bold: 'Acesse o portal da Receita Federal', rest: ' com seu Certificado.' },
-  { bold: 'Emita Notas Fiscais',               rest: ' com valor jurídico, de qualquer lugar.' },
+  { bold: 'Emita Notas Fiscais', rest: ' com valor jurídico, de qualquer lugar.' },
 ];
 
 const About: React.FC = () => {
@@ -52,12 +52,7 @@ const About: React.FC = () => {
 
         {/* Right: steps card */}
         <ScrollAnimation delay={2} className="flex justify-center">
-          <div className="relative bg-[#0d1f3c] rounded-3xl p-8 w-full max-w-85overflow-hidden">
-            {/* Top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-0.75 bg-linear-to-r from-blue-600 to-[#38bdf8]" />
-
-            {/* Glow blob */}
-            <div className="absolute -top-7.5 -right-7.5 w-30 h-30 rounded-full bg-[#38bdf8]/20 blur-2xl" />
+          <div className="relative bg-[#0d1f3c] rounded-3xl p-8 w-full max-w-85overflow-hidden">    
 
             <p className="text-[0.7rem] tracking-widest uppercase text-white/40 mb-3">
               Como funciona
@@ -70,9 +65,8 @@ const About: React.FC = () => {
               {steps.map(({ num, text }, i) => (
                 <div
                   key={num}
-                  className={`flex items-center gap-4 py-4 text-sm text-white/70 ${
-                    i < steps.length - 1 ? 'border-b border-white/6' : ''
-                  }`}
+                  className={`flex items-center gap-4 py-4 text-sm text-white/70 ${i < steps.length - 1 ? 'border-b border-white/6' : ''
+                    }`}
                 >
                   <div className="w-8 h-8 rounded-full bg-[#38bdf8]/15 border border-[#38bdf8]/30 flex items-center justify-center font-sora font-bold text-sm text-[#38bdf8] shrink-0">
                     {num}
