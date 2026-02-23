@@ -50,7 +50,6 @@ const Hero: React.FC = () => {
           {/* Stats */}
           <div className="flex flex-wrap gap-8 mt-6 pt-4 border-t border-white/8">
             {[
-              { number: '6.000+', label: 'Avaliações' },
               { number: '15 min', label: 'Emissão rápida' },
               { number: '100%', label: 'Online' },
             ].map(({ number, label }) => (

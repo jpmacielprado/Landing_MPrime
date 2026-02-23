@@ -1,14 +1,9 @@
 import React from 'react';
-import { Globe, Video, Phone, PlusCircle } from 'lucide-react';
+import { Video, Phone, PlusCircle } from 'lucide-react';
 import Doc from '../assets/doc.svg';
 import { ScrollAnimation } from './ScrollAnimation';
 
 const diffs = [
-  {
-    title: 'Avaliação Máxima',
-    description: 'Mais de 6.000 avaliações positivas no Google',
-    icon: <Globe size={22} />,
-  },
   {
     title: 'Flexibilidade',
     description: 'Emissão por Videoconferência — você faz tudo pelo celular ou computador.',
