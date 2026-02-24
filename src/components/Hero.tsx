@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
             </p>
 
             <a
-              href="https://wa.me/5512991337334?text=Olá%20MPrime%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20certificados%20digitais."
+              href="https://wa.me/5512991631525?text=Olá%20MPrime%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20certificados%20digitais."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-linear-to-br from-blue-500 to-[#38bdf8] text-white px-8 py-4 rounded-xl font-sora font-bold text-base shadow-[0_8px_32px_rgba(59,130,246,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(59,130,246,0.5)] no-underline"
