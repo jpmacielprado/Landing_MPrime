@@ -16,9 +16,16 @@ const Footer: React.FC = () => {
               <ShieldCheck size={22} className="text-[#38bdf8]" />
               MPrime
             </a>
-            <p className="text-sm leading-[1.7] max-w-60">
+            <p className="text-sm leading-[1.7] max-w-60 mb-4">
               Sua parceira de confiança para emissão de certificados digitais e-CPF e e-CNPJ com agilidade e segurança.
             </p>
+            {/* Informação de Afiliação */}
+            <div className="inline-block px-3 py-2 rounded-lg bg-white/5 border border-white/10">
+              <p className="text-[10px] uppercase tracking-wider text-white/40 font-bold">
+                Parceiro Afiliado Autorizado
+              </p>
+              <p className="text-xs text-[#38bdf8] font-semibold">Elo Digital Certificadora</p>
+            </div>
           </div>
 
           {/* Quick links */}
