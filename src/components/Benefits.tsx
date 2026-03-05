@@ -57,7 +57,7 @@ const Benefits: React.FC = () => {
         {/* Right: Google rating card */}
         <ScrollAnimation delay={2} className="flex justify-center items-center">
           <div className="relative">
-            <img src={Doc} alt="Documento" loading="lazy" className="w-full max-w-85 h-auto" />
+            <img src={Doc} alt="Documento" loading="lazy" className="w-full max-w-65 h-auto" />
           </div>
         </ScrollAnimation>
 
