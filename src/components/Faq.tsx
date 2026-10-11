@@ -31,65 +31,79 @@ const faqData: FAQItem[] = [
 ];
 
 const Faq: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" className="pb-28 pt-10  px-8 bg-white">
-      <div className="max-w-175 mx-auto text-center">
+    <section id="faq" className="py-28 px-6 sm:px-8 lg:px-12 bg-white relative overflow-hidden">
+      {/* Decorative ambient lights */}
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <ScrollAnimation>
-          <span className="inline-block text-[0.75rem] font-bold tracking-[0.12em] uppercase text-blue-700 bg-blue-700/8border border-blue-700/15 px-3.5 py-1.5 rounded-full mb-4">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-blue-700 bg-blue-50 border border-blue-200/80 px-3.5 py-1.5 rounded-full mb-4 shadow-xs">
             Dúvidas
           </span>
-          <h2 className="font-sora text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-[#0d1f3c] tracking-[-0.03em] leading-[1.2] mb-12">
+          <h2 className="font-sora text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0a162c] tracking-tight leading-[1.18] mb-14">
             Perguntas Frequentes
           </h2>
         </ScrollAnimation>
 
-        <div className="flex flex-col gap-3 text-left">
-          {faqData.map(({ question, answer }, i) => (
-            <ScrollAnimation key={i} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
-              <div
-                className={[
-                  'border rounded-2xl overflow-hidden transition-colors duration-200',
-                  openIndex === i ? 'border-blue-700/25' : 'border-slate-200',
-                ].join(' ')}
-              >
-                <button
-                  onClick={() => toggle(i)}
-                  className={`w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 ${openIndex === i ? 'bg-white' : 'bg-transparent hover:bg-white/5'
-                    }`}
-                >
-                  {/* Texto Branco quando fechado, Roxo quando aberto */}
-                  <span className={`font-sora text-sm font-bold md:text-base transition-colors duration-200 ${openIndex === i ? 'text-white' : 'text-white'
-                    }`}>
-                    {question}
-                  </span>
-
-                  <ChevronDown
-                    size={20}
-                    className={`shrink-0 transition-all duration-300 ${openIndex === i ? 'rotate-180 text-purple-600' : 'text-white'
-                      }`}
-                  />
-                </button>
-
-                {/* Accordion body */}
+        <div className="flex flex-col gap-4 text-left">
+          {faqData.map(({ question, answer }, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <ScrollAnimation key={i} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
                 <div
-                  className="overflow-hidden bg-white transition-all duration-300 ease-in-out"
-                  style={{
-                    maxHeight: openIndex === i ? '200px' : '0px',
-                    paddingTop: openIndex === i ? undefined : '0',
-                    paddingBottom: openIndex === i ? undefined : '0',
-                  }}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? 'border-blue-400/60 bg-white shadow-lg ring-1 ring-blue-400/20'
+                      : 'border-slate-200/90 bg-slate-50/70 hover:border-slate-300 hover:bg-slate-50'
+                  }`}
                 >
-                  <p className="px-6 py-4 text-sm font-semibold text-slate-500 leading-[1.75]">
-                    {answer}
-                  </p>
+                  <button
+                    type="button"
+                    onClick={() => toggle(i)}
+                    className="w-full flex items-center justify-between gap-4 px-6 sm:px-8 py-5.5 text-left transition-colors duration-200 cursor-pointer focus:outline-none"
+                  >
+                    <span
+                      className={`font-sora text-base sm:text-lg font-bold transition-colors duration-200 ${
+                        isOpen ? 'text-blue-600' : 'text-[#0a162c]'
+                      }`}
+                    >
+                      {question}
+                    </span>
+
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                        isOpen
+                          ? 'bg-blue-600 text-white rotate-180 shadow-sm'
+                          : 'bg-slate-200/70 text-slate-600'
+                      }`}
+                    >
+                      <ChevronDown size={18} />
+                    </div>
+                  </button>
+
+                  {/* Accordion body */}
+                  <div
+                    className="overflow-hidden transition-all duration-300 ease-in-out"
+                    style={{
+                      maxHeight: isOpen ? '240px' : '0px',
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                  >
+                    <div className="px-6 sm:px-8 pb-6 pt-1">
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal border-t border-slate-100 pt-4">
+                        {answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </ScrollAnimation>
-          ))}
+              </ScrollAnimation>
+            );
+          })}
         </div>
       </div>
     </section>

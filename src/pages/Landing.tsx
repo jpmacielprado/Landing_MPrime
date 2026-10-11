@@ -1,18 +1,21 @@
 import React from 'react';
-import Hero      from '../components/Hero';
-import About     from '../components/About';
-import Features  from '../components/Features';
-import Benefits  from '../components/Benefits';
-import Reviews   from '../components/Reviews';
-import Pricing   from '../components/Pricing';
-import Faq       from '../components/Faq';
-import Footer    from '../components/Footer';
+import Navbar         from '../components/Navbar';
+import Hero           from '../components/Hero';
+import About          from '../components/About';
+import Features       from '../components/Features';
+import Benefits       from '../components/Benefits';
+import Reviews        from '../components/Reviews';
+import Pricing        from '../components/Pricing';
+import Faq            from '../components/Faq';
+import Footer         from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Landing: React.FC = () => {
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div className="min-h-screen w-full bg-white text-slate-800 flex flex-col font-sans selection:bg-[#38bdf8] selection:text-white">
+      <Navbar />
 
-      <main>
+      <main className="flex-1">
         <Hero />
         <About />
         <Features />
@@ -23,6 +26,7 @@ const Landing: React.FC = () => {
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

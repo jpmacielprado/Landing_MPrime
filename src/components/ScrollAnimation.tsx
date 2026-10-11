@@ -25,15 +25,23 @@ export const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
     const el = ref.current;
     if (!el) return;
 
+    // Check if element is already in viewport on mount
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '-60px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
     );
 
     observer.observe(el);
